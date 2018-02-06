@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class TraditionalSocketDemo {
 	public static void main(String[] args) throws IOException{
-		ServerSocket  serverSocket=  new ServerSocket(7777);
+		ServerSocket  serverSocket=  new ServerSocket(9999);
 		System.out.println("·þÎñ¶ËÆô¶¯¡£¡£¡£¡£");
 		while(true){
 			Socket socket = serverSocket.accept();
