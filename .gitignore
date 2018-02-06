@@ -3,3 +3,4 @@
 .metadata/.log
 *.class
 
+NIO/bin/com/lds/nio/TraditionalSocketDemo.class
