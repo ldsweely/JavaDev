@@ -6,7 +6,7 @@ import java.net.Socket;
 
 public class TraditionalSocketDemo {
 	public static void main(String[] args) throws IOException{
-		ServerSocket  serverSocket=  new ServerSocket(9999);
+		ServerSocket  serverSocket=  new ServerSocket(9788);
 		System.out.println("·þÎñ¶ËÆô¶¯¡£¡£¡£¡£");
 		while(true){
 			Socket socket = serverSocket.accept();
@@ -15,11 +15,11 @@ public class TraditionalSocketDemo {
 			InputStream is =  socket.getInputStream();
 			byte[] b= new byte[1024];
 			while(true){
-				int data = is.read();
+				int data = is.read(b);
 				if(data != -1)
 				{
-					String info = new String(b,0,data);
-					System.out.println(info);
+					String info = new String(b,0,data,"GBK");
+					System.out.println(info.toString());
 				}
 			}
 		}
