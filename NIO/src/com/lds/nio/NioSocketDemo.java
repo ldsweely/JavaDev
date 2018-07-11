@@ -35,8 +35,7 @@ public class NioSocketDemo {
 		System.out.println("服务已启动。。。。");
 		
 	}
-	
-	public void listenSelector() throws IOException{
+		public void listenSelector() throws IOException{
 		//轮询
 		while(true){
 			//等待客户连接 
