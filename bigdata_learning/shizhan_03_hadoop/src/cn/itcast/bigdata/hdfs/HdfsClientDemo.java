@@ -28,19 +28,19 @@ public class HdfsClientDemo {
 	public void init() throws Exception{
 		
 		conf = new Configuration();
-		conf.set("fs.defaultFS", "hdfs://master:9000");
+		conf.set("fs.defaultFS", "hdfs://mini01:9000");
 		
 		//拿到一个文件系统操作的客户端实例对象
 		/*fs = FileSystem.get(conf);*/
 		//可以直接传入 uri和用户身份
-		fs = FileSystem.get(new URI("hdfs://master:9000"),conf,"hadoop"); //最后一个参数为用户名
+		fs = FileSystem.get(new URI("hdfs://mini01:9000"),conf,"hadoop"); //最后一个参数为用户名
 	}
 
 	@Test
 	public void testUpload() throws Exception {
 		
 		Thread.sleep(2000);
-		fs.copyFromLocalFile(new Path("G:/access.log"), new Path("/access.log.copy"));
+		fs.copyFromLocalFile(new Path("d:/test.log"), new Path("/access.log.copy"));
 		fs.close();
 	}
 	
@@ -48,7 +48,7 @@ public class HdfsClientDemo {
 	@Test
 	public void testDownload() throws Exception {
 		
-		fs.copyToLocalFile(new Path("/access.log.copy"), new Path("d:/"));
+		fs.copyToLocalFile(new Path("/access.log.copy"), new Path("e:/"));
 		fs.close();
 	}
 	
@@ -96,15 +96,15 @@ public class HdfsClientDemo {
 		}
 	}
 	
-	public static void main(String[] args) throws Exception {
-		Configuration conf = new Configuration();
-		conf.set("fs.defaultFS", "hdfs://master:9000");
-		//拿到一个文件系统操作的客户端实例对象
-		FileSystem fs = FileSystem.get(conf);
-		
-		fs.copyFromLocalFile(new Path("G:/access.log"), new Path("/access.log.copy"));
-		fs.close();
-	}
+//	public static void main(String[] args) throws Exception {
+//		Configuration conf = new Configuration();
+//		conf.set("fs.defaultFS", "hdfs://mini01:9000");
+//		//拿到一个文件系统操作的客户端实例对象
+//		FileSystem fs = FileSystem.get(conf);
+//		
+//		fs.copyFromLocalFile(new Path("d:/test.log"), new Path("/access.log.copy"));
+//		fs.close();
+//	}
 	
 
 }
