@@ -3,3 +3,4 @@
 .metadata/.log
 bin/*.*
 /.metadata/
+*.class
