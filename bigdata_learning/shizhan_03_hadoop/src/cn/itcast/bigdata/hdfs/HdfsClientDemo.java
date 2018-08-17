@@ -1,7 +1,5 @@
 package cn.itcast.bigdata.hdfs;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.net.URI;
 import java.util.Iterator;
 import java.util.Map.Entry;
@@ -37,7 +35,7 @@ public class HdfsClientDemo {
 		//拿到一个文件系统操作的客户端实例对象
 		fs = FileSystem.get(conf);
 		//可以直接传入 uri和用户身份
-		fs = FileSystem.get(new URI("hdfs://mini01:9000"),conf,"hadoop");
+		fs = FileSystem.get(new URI("hdfs://mini1:9000"),conf,"hadoop");
 	}
 
 	/**
@@ -90,7 +88,7 @@ public class HdfsClientDemo {
 	@Test
 	public void testDelete() throws Exception {
 		
-		boolean flag = fs.delete(new Path("/testmkdir"), true);
+		boolean flag = fs.delete(new Path("/testmkdir/aaa"), true);
 		System.out.println(flag);
 		
 	}

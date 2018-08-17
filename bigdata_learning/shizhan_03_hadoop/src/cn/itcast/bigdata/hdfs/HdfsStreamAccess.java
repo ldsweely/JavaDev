@@ -33,7 +33,7 @@ public class HdfsStreamAccess {
 		//拿到一个文件系统操作的客户端实例对象
 //		fs = FileSystem.get(conf);
 		//可以直接传入 uri和用户身份
-		fs = FileSystem.get(new URI("hdfs://mini01:9000"),conf,"hadoop");
+		fs = FileSystem.get(new URI("hdfs://mini1:9000"),conf,"hadoop");
 	}
 	
 
@@ -45,7 +45,7 @@ public class HdfsStreamAccess {
 	public void testUpload() throws Exception {
 		
 		FSDataOutputStream outputStream = fs.create(new Path("/angelababy.love"), true);
-		FileInputStream inputStream = new FileInputStream("d:/angelababy.love");
+		FileInputStream inputStream = new FileInputStream("c:/angelababy.love");
 		
 		IOUtils.copy(inputStream, outputStream);
 		
@@ -61,7 +61,7 @@ public class HdfsStreamAccess {
 		
 		FSDataInputStream inputStream = fs.open(new Path("/angelababy.love"));		
 		
-		FileOutputStream outputStream = new FileOutputStream("e:/angelababy.love");
+		FileOutputStream outputStream = new FileOutputStream("d:/angelababy.love");
 		
 		IOUtils.copy(inputStream, outputStream);
 		
@@ -75,9 +75,10 @@ public class HdfsStreamAccess {
 	
 		inputStream.seek(12);
 		
-		FileOutputStream outputStream = new FileOutputStream("e:/angelababy.love.part2");
+		FileOutputStream outputStream = new FileOutputStream("d:/angelababy.love.part2");
 		
 		IOUtils.copy(inputStream, outputStream);
+		
 		
 	}
 	

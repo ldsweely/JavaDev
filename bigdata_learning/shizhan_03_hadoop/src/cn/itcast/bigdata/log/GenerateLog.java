@@ -15,7 +15,6 @@ public class GenerateLog {
 			Thread.sleep(500);
 			if (i > 1000000)
 				break;
-
 		}
 	}
 
