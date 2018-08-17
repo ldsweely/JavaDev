@@ -75,10 +75,9 @@ public class HdfsStreamAccess {
 	
 		inputStream.seek(12);
 		
-		FileOutputStream outputStream = new FileOutputStream("d:/angelababy.love.part2");
+		FileOutputStream outputStream = new FileOutputStream("e:/angelababy.love.part2");
 		
 		IOUtils.copy(inputStream, outputStream);
-		
 		
 	}
 	
